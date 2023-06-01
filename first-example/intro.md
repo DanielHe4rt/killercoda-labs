@@ -1,5 +1,5 @@
 
-![TwitchTV and ScyllaDB Logo](./images/scylla_twitch.png)
+![TwitchTV and ScyllaDB Logo](./images/1-scylla_twitch.png)
 
 ---
 
