@@ -1,20 +1,25 @@
 {
-  "title": "First Example",
-  "details": {
-    "intro": {
-      "text": "intro.md"
-    },
-    "finish": {
-      "text": "finish.md"
-    },
-    "steps": [
-      {
-        "title": "Let's update our package manager repository",
-        "text": "step1.md"
-      }
-    ]
-  },
-  "backend": {
-    "imageid": "ubuntu"
-  }
+    "title": "First Example",
+    "details": {
+        "assets": {
+            "host01": [
+                {"file": "app", "target": "/app"}
+            ],
+            "intro": {
+                "text": "intro.md"
+            },
+            "finish": {
+                "text": "finish.md"
+            },
+            "steps": [
+                {
+                    "title": "Let's update our package manager repository",
+                    "text": "step1.md"
+                }
+            ]
+        },
+        "backend": {
+            "imageid": "ubuntu"
+        }
+    }
 }
