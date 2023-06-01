@@ -5,7 +5,7 @@
             "host01": [
                 {
                     "file": "app/*",
-                    "target": "/root/app"
+                    "target": "app"
                 }
             ]
         },
