@@ -1,5 +1,6 @@
 {
-    "title": "First Example",
+    "title": "ScyllaDB: Twitch Sentinel Hands-on Lab",
+    "description": "Build a high throughput application using TwitchTV as your main target.",
     "details": {
         "assets": {
             "host01": [
