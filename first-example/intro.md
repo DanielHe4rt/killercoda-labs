@@ -1,5 +1,5 @@
 
-<p style="text-align:center;">
+<p align="center">
     <img src="./images/twitch-logo.png" width="150">
     <img src="./images/scylla-logo.png" width="250">
 </p>
