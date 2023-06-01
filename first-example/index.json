@@ -5,7 +5,7 @@
             "host01": [
                 {
                     "file": "app/*",
-                    "target": "app"
+                    "target": "~/twitch-sentinel"
                 }
             ]
         },
