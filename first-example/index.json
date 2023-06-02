@@ -20,6 +20,10 @@
             {
                 "title": "Connect to Scylla Docker and Create a Cluster",
                 "text": "step1.md"
+            },
+            {
+                "title": "Modeling our Keyspace and Running Queries",
+                "text": "step2.md"
             }
         ]
     },

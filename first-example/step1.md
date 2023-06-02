@@ -31,3 +31,4 @@ Run a CQL shell:
 
 `docker exec -it Node_X cqlsh`{{execute}} 
 
+And now you're ready to run queries and model keyspaces/tables. 🥳🥳
