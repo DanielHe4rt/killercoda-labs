@@ -7,5 +7,5 @@ Create a keyspace and call it **twitch_sentinel**:
 `CREATE KEYSPACE twitch_sentinel WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'replication_factor' : 3};`{{execute}}
 
 
-![Base Modeling to Streamer's table](images/2-1-base-modeling.png)
+![Base Modeling to Streamer's table](./images/2-1-base-modeling.png)
 
