@@ -16,7 +16,7 @@ Now we're good to go and create our tables and start developing our software!
 
 ## Modeling our First Tables
 
-![Base Modeling to Streamer's table](./images/2-1-base-modeling.png)
+![Base Modeling to Streamer's table](./images/2-1-base-tables.png)
 
 Twitch Sentinel has one task: retrieve and store messages from any twitch channel that we want. But what do we need to make it work?
 
@@ -54,6 +54,6 @@ After created we can run the `DESC table_name;` to see if is everything working 
 
 ## Inserting Data
 
-![Base Modeling to Streamer's table](./images/2-2-base-modeling.png)
+![Base Modeling to Streamer's table](./images/2-2-base-entries.png)
 
 lorem ipsum
