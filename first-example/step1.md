@@ -1,1 +1,3 @@
-yeah it works hopefully
+A [Cluster](https://university.scylladb.com/courses/scylla-essentials-overview/lessons/architecture/topic/cluster-node-ring/) is a collection of [Nodes](https://university.scylladb.com/topic/node/) that ScyllaDB uses to store the data. The nodes are logically distributed like a ring. A minimum cluster typically consists of at least three nodes. Data is automatically [replicated](https://university.scylladb.com/topic/data-replication/) across the cluster, depending on the Replication Factor. Learn more about ScyllaDB Architecture in [this lesson](https://university.scylladb.com/courses/scylla-essentials-overview/lessons/architecture/).
+
+

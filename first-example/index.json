@@ -18,7 +18,7 @@
         },
         "steps": [
             {
-                "title": "Let's update our package manager repository",
+                "title": "Connect to Scylla Docker and Create a Cluster",
                 "text": "step1.md"
             }
         ]
