@@ -14,3 +14,10 @@ The app that we're about to build is called "Twitch Sentinel", a bot that will s
 
 The idea is to show how the "real world" throughput can work based on your demand.
 
+Before we start, let's make your environment a little bit fancy by clicking in the snippet below.
+
+```sh
+source ~/.bashrc
+```{{execute}}
+
+Happy coding! 🥳
