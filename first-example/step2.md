@@ -40,7 +40,7 @@ CREATE TABLE streamers (
    chatter_id text,
    chatter_username text,
    chatter_message text,
-   sent_at text,
+   sent_at timestamp,
    PRIMARY KEY (streamer_id, sent_at)
 ) WITH CLUSTERING ORDER BY (sent_at DESC);`{{execute}}
 
@@ -70,6 +70,16 @@ Let's insert our first message into `messages` table.
 
 ```sql
 INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, sent_at) VALUES ('227168488', '696050679', 'cherryhe4rt', 'Hi lol', 1685933740);
+INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, sent_at) VALUES ('227168488', '227168488', 'danielhe4rt', 'Hey @cherryhe4rt', 1685933845);
 ```{{execute}}
 
-This can represent a message received on any Twitch Chat that you have. 
+This will represent a message received in any Twitch Chat that you have registered into your keyspace. 
+
+Check if you data was correctly inserted into your tables using:
+
+```sql
+SELECT * FROM streamers;
+SELECT * FROM messages;
+```{{execute}}
+
+and now we're ready to start build our application in the next section! 🥳😎
