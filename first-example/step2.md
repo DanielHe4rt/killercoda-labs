@@ -27,13 +27,13 @@ At the beginning, we will need two tables:
 
 We will add more tables, but let's keep it simple.
 
-```
+`
 CREATE TABLE streamers (
    streamer_id text,
    streamer_username text,
    PRIMARY KEY (streamer_id)
-);{{execute}}
-```
+);
+`{{execute}}
 
 `CREATE TABLE messages (
    streamer_id text,
@@ -43,6 +43,8 @@ CREATE TABLE streamers (
    sent_at text,
    PRIMARY KEY (streamer_id, sent_at)
 ) WITH CLUSTERING ORDER BY (sent_at DESC);`{{execute}}
+
+The `streamers` table will store all twitch channels `id/usernames` that we want to connect and listen the chat and `messages` table will store all the messages from those channels.
 
 
 After created we can run the `DESC table_name;` to see if is everything working as expected.
@@ -59,4 +61,8 @@ After created we can run the `DESC table_name;` to see if is everything working 
 
 Let's insert our first message into `messages` table.
 
-``
+```sql
+INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, sent_at) VALUES ('227168488', '696050679', 'cherryhe4rt', 'Hi lol', 1685933740);
+```
+
+This can represent a message received on any Twitch Chat that you have. 
