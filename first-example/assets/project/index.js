@@ -14,7 +14,7 @@ const cluster = new cassandra.Client({
 })
 
 async function insertOnDatabase(user, message) {
-    let query = `INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES ('${user['room-id']}', '${user['user-id']}', '${message}', ${user['tmi-sent-ts']})`
+    let query = `INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES ('${user['room-id']}', '${user['user-id']}', '${user['display-name']}', '${message}', ${user['tmi-sent-ts']})`
      await cluster.execute(query);
 }
 

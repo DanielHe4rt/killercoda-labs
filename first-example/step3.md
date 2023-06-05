@@ -1,6 +1,6 @@
 Let's open a new tab and leave the actual terminal to our CQLSH. Head to `Editor Tab` , we're gonna setup the development environment by downloading everything we need.
 
-![Arrows pointing to open the Code Editor Tab](./images//3-2-opening-the-editor.png)
+![Arrows pointing to open the Code Editor Tab](./images/3-2-opening-the-editor.png)
 
 Now on the `Editor Tab` tab we need to enter the project folder, which is called `twitch-sentinel`. 
 
