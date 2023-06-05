@@ -1,0 +1,1 @@
+doideira fi bora codar agora

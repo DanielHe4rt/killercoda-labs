@@ -24,6 +24,10 @@
             {
                 "title": "Modeling our Keyspace and Running Queries",
                 "text": "step2.md"
+            },
+            {
+                "title": "Connecting into Twitch IRC and Crafting our App.",
+                "text": "step3.md"
             }
         ]
     },
