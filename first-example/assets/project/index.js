@@ -9,7 +9,7 @@ const client = new tmi.Client({
 const cluster = new cassandra.Client({
     contactPoints: ["172.17.0.2", "172.17.0.3", "172.17.0.4"],
     credentials: {username: 'scylla', password: 'secret-password'},
-    localDataCenter: 'localhost',
+    localDataCenter: 'datacenter1',
     keyspace: 'twitch_sentinel'
 })
 
@@ -22,6 +22,6 @@ async function insertOnDatabase(user, message) {
 client.connect();
 
 client.on('message', (channel, user, message, self) => {
-        console.log(`${channel} -> ${user['display-name']}: ${message}`);
+    console.log(`${channel} -> ${user['display-name']}: ${message}`);
     insertOnDatabase(user, message)
 });
