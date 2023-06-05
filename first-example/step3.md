@@ -18,3 +18,8 @@ You can run the command below and install the dependencies:
 npm i tmi.js cassandra-driver
 ```{{execute}}
 
+Now run the project with: 
+
+```sh
+node index.js
+```{{execute}}
