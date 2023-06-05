@@ -27,11 +27,13 @@ At the beginning, we will need two tables:
 
 We will add more tables, but let's keep it simple.
 
-`CREATE TABLE streamers (
+```
+CREATE TABLE streamers (
    streamer_id text,
    streamer_username text,
    PRIMARY KEY (streamer_id)
-);`{{execute}}
+);{{execute}}
+```
 
 `CREATE TABLE messages (
    streamer_id text,
@@ -50,10 +52,11 @@ After created we can run the `DESC table_name;` to see if is everything working 
 `DESC messages;`{{execute}}
 
 
-
-
 ## Inserting Data
 
 ![Base Modeling to Streamer's table](./images/2-2-base-entries.png)
 
-lorem ipsum
+
+Let's insert our first message into `messages` table.
+
+``
