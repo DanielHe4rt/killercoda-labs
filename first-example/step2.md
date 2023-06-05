@@ -58,11 +58,18 @@ After created we can run the `DESC table_name;` to see if is everything working 
 
 ![Base Modeling to Streamer's table](./images/2-2-base-entries.png)
 
+Before add any streamer into our app, let's do a quick start. If you have a Twitch Channel, add it changing the query below: 
+
+```sql
+INSERT INTO streamers (streamer_id, streamer_username) VALUES ('227168488', 'danielhe4rt');
+INSERT INTO streamers (streamer_id, streamer_username) VALUES ('181077473', 'gaules');
+```{{execute}}
+
 
 Let's insert our first message into `messages` table.
 
 ```sql
 INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, sent_at) VALUES ('227168488', '696050679', 'cherryhe4rt', 'Hi lol', 1685933740);
-```
+```{{execute}}
 
 This can represent a message received on any Twitch Chat that you have. 
