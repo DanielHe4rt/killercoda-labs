@@ -9,7 +9,7 @@
                     "target": "~/twitch-sentinel/"
                 },
                 {
-                    "file": "project/composer.json",
+                    "file": "project/package.json",
                     "target": "~/twitch-sentinel/"
                 },
                 {

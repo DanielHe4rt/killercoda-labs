@@ -14,10 +14,11 @@ The app that we're about to build is called "Twitch Sentinel", a bot that will s
 
 The idea is to show how the "real world" throughput can work based on your demand.
 
-Before we start, let's make your environment a little bit fancy by clicking in the snippet below.
+Before we start, let's understand how the Killercoda works in the snippet below.
 
 ```sh
-source ~/.bashrc
+echo "Let's begin the course :p"
 ```{{execute}}
 
-Happy coding! 🥳
+It runs all the commands you need without need to type it. Happy coding! 🥳
+
