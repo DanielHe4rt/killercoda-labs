@@ -5,7 +5,11 @@
         "assets": {
             "host01": [
                 {
-                    "file": "project/*.*",
+                    "file": "project/index.js",
+                    "target": "~/twitch-sentinel/"
+                },
+                {
+                    "file": "project/composer.json",
                     "target": "~/twitch-sentinel/"
                 },
                 {
