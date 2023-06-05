@@ -6,6 +6,7 @@ cat ~/.bashrc .dh-bashrc >> ~/.bashrc
 source ~/.bashrc
 
 rm -rf nodesource_setup.sh .dh-bashrc
+sleep 1
 echo done > /tmp/background0
 
 
