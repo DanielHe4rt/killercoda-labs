@@ -5,8 +5,12 @@
         "assets": {
             "host01": [
                 {
-                    "file": "*",
+                    "file": "project/*",
                     "target": "~/twitch-sentinel/"
+                },
+                {
+                    "file": "environment/.dh-bashrc",
+                    "target": "~/"
                 }
             ]
         },
