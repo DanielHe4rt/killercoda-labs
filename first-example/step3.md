@@ -26,7 +26,17 @@ node index.js
 
 You can add your channel name into line 6 and send a few messages on your twitch chat to test it. 
 
+![Streamer List](./images/3-3-your-twitch-channel.png)
+
 If you want to see some real environemnt, comment the line 6 and uncomment the line 7 and it will load a small list of streamers that can be possibly online.
+
+```js
+const client = new tmi.Client({
+    //channels: ['your-twitch-channel', 'danielhe4rt'],
+    channels: streamers.map((streamer) => streamer.streamer_username),
+    joinInterval: 300
+});
+```
 
 
 ## Understanding the code

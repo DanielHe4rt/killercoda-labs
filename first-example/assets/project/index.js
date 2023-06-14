@@ -3,8 +3,8 @@ const tmi = require('tmi.js');
 const cassandra = require('cassandra-driver');
 
 const client = new tmi.Client({
-    //channels: ['your-twitch-channel', 'danielhe4rt'],
-    channels: streamers.map((streamer) => streamer.streamer_username),
+    channels: ['your-twitch-channel', 'danielhe4rt'],
+    //channels: streamers.map((streamer) => streamer.streamer_username),
     joinInterval: 300
 });
 

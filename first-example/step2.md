@@ -69,8 +69,8 @@ INSERT INTO streamers (streamer_id, streamer_username) VALUES ('181077473', 'gau
 Let's insert our first message into `messages` table.
 
 ```sql
-INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES ('227168488', '696050679', 'cherryhe4rt', 'Hi lol', 1685933740);
-INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES ('227168488', '227168488', 'danielhe4rt', 'Hey @cherryhe4rt', 1685933845);
+INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES ('227168488', '696050679', 'cherryhe4rt', 'Hi lol', 1685933740000);
+INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES ('227168488', '227168488', 'danielhe4rt', 'Hey @cherryhe4rt', 1685933845000);
 ```{{execute}}
 
 This will represent a message received in any Twitch Chat that you have registered into your keyspace. 
