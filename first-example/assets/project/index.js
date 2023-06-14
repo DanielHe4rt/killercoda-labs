@@ -1,11 +1,10 @@
 const streamers = require('./streamers.json');
 const tmi = require('tmi.js');
 const cassandra = require('cassandra-driver');
-cassandra_drv.types.consistencies.localQuorum
 
 const client = new tmi.Client({
-    channels: ['your-twitch-channel', 'danielhe4rt'],
-    // channels: streamers.map((streamer) => streamer.streamer_username),
+    //channels: ['your-twitch-channel', 'danielhe4rt'],
+    channels: streamers.map((streamer) => streamer.streamer_username),
     joinInterval: 300
 });
 
@@ -18,8 +17,14 @@ const cluster = new cassandra.Client({
 
 async function insertOnDatabase(user, message) {
     message = escape(message);
-    let query = `INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES ('${user['room-id']}', '${user['user-id']}', '${user['display-name']}', '${message}', ${user['tmi-sent-ts']})`
-    await cluster.execute(query);
+    let query = `INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES (?, ?, ?, ?, ?)`
+    await cluster.execute(query, [
+        user['room-id'],
+        user['user-id'],
+        user['display-name'],
+        message,
+        parseInt(user['tmi-sent-ts'])
+    ]);
 }
 
 

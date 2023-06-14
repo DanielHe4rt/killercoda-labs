@@ -33,6 +33,8 @@ If you want to see some real environemnt, comment the line 6 and uncomment the l
 
 To use ScyllaDB in any language, you will need to download any of our drivers OR can also be using a 3rd party driver from Cassandra. You can check the available drivers [here](https://docs.scylladb.com/stable/using-scylla/drivers/cql-drivers/index.html).
 
+### Scylla Connection
+
 In this example we used the `cassandra-driver` because we don't have a native driver for NodeJS yet. 
 
 On the connector, we will need to provive all the information related to which datacenter we're about to store the application data.
@@ -56,6 +58,73 @@ const cluster = new cassandra.Client({
 
 > Drivers in other languages may require `CONSISTENCY_LEVEL` to start but in this case, you can set it on a specific query.
 
-```js 
+### Twitch Connection
 
+Connect into Twitch chat with NodeJS become way easier when you envolve `tmi.js`, a simple client to listen to any Twitch chat without using credentials.
+
+Twitch Chat is an `IRC` boosted based chat, so if you have any familiarity with the protocol it will be easy to understand it.
+
+But since were using TMI.js things are way less complicated. Let's check how to connect to their servers:
+
+```js
+const tmi = require('tmi.js');
+const client = new tmi.Client({
+    //channels: ['your-twitch-channel', 'danielhe4rt'],
+    channels: streamers.map((streamer) => streamer.streamer_username),
+    joinInterval: 300,
+    //identity: {
+	//	username: 'my_bot_name',
+	//	password: 'oauth:my_bot_token'
+	//},
+});
+
+client.connect();
+client.on('message', (channel, user, message, self) => {
+    console.log(`${channel} -> ${user['display-name']}: ${message}`);
+});
 ```
+
+* You will need to inform which `channels` can you want to connect. There's no limit for that, so you can explore multiple channels at the same time.
+* There's a minimum `joinInterval` delimited by Twitch that is `300ms` but you can mail them and ask for permission for a minor interval.
+* If you want to dig deeper, you can create your Twitch Dev account and do your own verified bot and fill the `identity credentials`.
+
+> By default the TMI uses a "anonymous bot" that can only read chat messages.
+
+
+The `user` object retrieved in any `client.on()` event:
+```json
+{
+    "badge-info": {
+        "subscriber": "58"
+    },
+    "badges": {
+        "broadcaster": "1",
+        "subscriber": "3036",
+        "partner": "1"
+    },
+    "client-nonce": "3e00905ed814fb4d846e8b9ba6a9c1da",
+    "color": "#8A2BE2",
+    "display-name": "danielhe4rt",
+    "emotes": null,
+    "first-msg": false,
+    "flags": null,
+    "id": "b40513ae-efed-472b-9863-db34cf0baa98",
+    "mod": false,
+    "returning-chatter": false,
+    "room-id": "227168488",
+    "subscriber": true,
+    "tmi-sent-ts": "1686770892358",
+    "turbo": false,
+    "user-id": "227168488",
+    "user-type": null,
+    "emotes-raw": null,
+    "badge-info-raw": "subscriber/58",
+    "badges-raw": "broadcaster/1,subscriber/3036,partner/1",
+    "username": "danielhe4rt",
+    "message-type": "chat"
+}
+```
+
+### Querying Twitch to ScyllaDB
+
+
