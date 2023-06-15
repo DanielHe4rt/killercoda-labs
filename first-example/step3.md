@@ -137,4 +137,31 @@ The `user` object retrieved in any `client.on()` event:
 
 ### Querying Twitch to ScyllaDB
 
+Initially we will do a single query just inserting the message into `messages table`. We will use the same example query showed on the previous step. 
 
+On the database client, we have a function named `execute()`, which will receive the `prepared query` and the `binded parameters` for this query.
+
+```js
+async function insertOnDatabase(user, message) {
+    message = escape(message);
+    let query = `INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES (?, ?, ?, ?, ?)`
+    await cluster.execute(query, [
+        user['room-id'],
+        user['user-id'],
+        user['display-name'],
+        message,
+        parseInt(user['tmi-sent-ts'])
+    ]);
+}
+```
+
+Things to pay attention: 
+
+* Verify if the amount of bindings fit the amount of columns.
+* Partition Key and Clustering keys are `required` for each query in Scylla. Eg: streamer_id and message_sent_at
+* By default, if you use `prepared statements` (as the example above), it will transform all the data for the right type based on your data modeling.
+  * But for that, you need to respect the rules implied by the driver.
+
+> If you want to insert a timestamp from a **String**, it will fail. Before insert it, you will need to transform to **Integer**. We strongly recommend you to always check your driver documentation.
+
+And with that you have the base knowledge on what is going on at this sample code.
