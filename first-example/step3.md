@@ -144,8 +144,8 @@ On the database client, we have a function named `execute()`, which will receive
 ```js
 async function insertOnDatabase(user, message) {
     message = escape(message);
-    let query = `INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES (?, ?, ?, ?, ?)`
     await cluster.execute(query, [
+        let query = `INSERT INTO messages (streamer_id, chatter_id, chatter_username, chatter_message, message_sent_at) VALUES (?, ?, ?, ?, ?)`
         user['room-id'],
         user['user-id'],
         user['display-name'],
